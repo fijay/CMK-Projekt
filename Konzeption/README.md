@@ -1,13 +1,17 @@
 # Konzeption
 
+
 ## Skizzen
 
 ![01](telefon-mockup_01_xs.png)
 ![02](telefon-mockup_02_xs.png)
 
 Auf eine explizite Darstellung der Funktionen innerhalb der Benutzerschnittstelle wurde verzichtet, um die Motivation für eine selbstständige Erkundung und somit einer etwas längere Auseinandersetzung mit der Applikation zu unterstützen.
+
 In Mockup 01 ist ein Symbol zu sehen, das auf die Richtung hinweist, in die das Mobilgerät zu drehen ist, um das Objekt am Himmel zu entdecken.
+
 In Mockup 02 ist das Objekt selbst zu sehen (s. u. für Interaktionsmöglichkeiten).
+
 
 ## Beeinflussung des Objekts
 
@@ -46,6 +50,7 @@ Die Einflussfaktoren sind im Detail:
 - [opt.] Größe
     - ← Anzahl freigesetzter Kind-Objekte (wenig → groß; viel → klein)
 
+
 ## Funktionen
 
 **Intern (App-seitig)**
@@ -63,5 +68,7 @@ Die Einflussfaktoren sind im Detail:
 - Senden von veränderten Objekteigenschaften zu Nutzern (Paket aus: Ton, Drehgeschwindigkeit, [opt.] Größe)
 
 Aus Gründen der Skalierbarkeit und Zeitsensitivität erledigt der Server nur das Nötigste (Rechenintensive Aufgaben werden auf dem Mobilgerät bahandelt).
+
 Der Server hält Objekteigenschaften vor und sendet sie bei Erstkontakt mit einer App aus. Sendet eine App eine veränderte Eigenschaft, werden die neuen Objekteigenschaften an alle verbundenen Apps gesendet.
+
 Aus Performance-Gründen Realisierung mit Node.js und Socket.io am Sinnvollsten.

@@ -5,6 +5,26 @@
 
 A Node.js application using Socket.IO for distributing updates in near real time.
 
+Flow:
+```
+               {
+                 "rotation": 5
+               }
+Some user      ----------------------------------->         Server
+```
+
+```
+               {
+                 "date": "2017-07-17",
+                 "time": "17:18:15",
+                 "dateTime": "2017-07-17 17:18:15",
+                 "sound": "a",
+                 "rotation": 5,
+                 "size": 1
+               }
+Server         ----------------------------------->         All users
+```
+
 
 ### Input
 

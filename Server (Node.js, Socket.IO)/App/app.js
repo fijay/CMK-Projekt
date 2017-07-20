@@ -47,20 +47,20 @@ function getDateAndTime() {
 		date: year + '-' + month + '-' + day,
 		time: hour + ':' + min + ':' + sec,
 		dateTime: year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec
-	}
+	};
 }
 
 function assembleUpdate() {
 		var dateAndTime = getDateAndTime();
 
-		return {
+		return JSON.stringify({
 			date: dateAndTime.date,
 			time: dateAndTime.time,
 			dateTime: dateAndTime.dateTime,
 			sound: object.sound,
 			rotation: object.rotation,
 			size: object.size
-		};
+		});
 }
 
 function broadcastUpdate() {
@@ -71,7 +71,7 @@ function broadcastUpdate() {
 }
 
 io.on('connection', function(socket) {
-	console.log('socket id: ' + socket.id);
+	console.log('\nsocket id: ' + socket.id);
 	//console.log(socket.client.conn.remoteAddress + ' connected');
 	console.log(socket.handshake.headers['x-forwarded-for'] + ' connected'); // if Node.js is behind proxy
 
@@ -81,7 +81,8 @@ io.on('connection', function(socket) {
 	io.to(socket.id).emit('update', update);
 
 	socket.on('disconnect', function() {
-		console.log(socket.client.conn.remoteAddress + ' disconnected');
+		//console.log(socket.client.conn.remoteAddress + ' disconnected');
+		console.log(socket.handshake.headers['x-forwarded-for'] + ' disconnected'); // if Node.js is behind proxy
 	});
 
 	socket.on('message', function(data) {

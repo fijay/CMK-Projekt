@@ -18,7 +18,7 @@ Something like this:
 }
 ```
 
-One key-value pair is also okay:
+One key-value pair is preferred:
 
 ```
 {
@@ -32,14 +32,13 @@ One key-value pair is also okay:
 Something like this:
 
 ```
-{ date: '2017-07-17',
-  time: '17:18:15',
-  dateTime: '2017-07-17 17:18:15',
-  sound: 'a',
-  rotation: 1,
-  size: 1 }
+{ "date": "2017-07-17",
+  "time": "17:18:15",
+  "dateTime": "2017-07-17 17:18:15",
+  "sound": "a",
+  "rotation": 1,
+  "size": 1 }
 ```
-Note: This is not JSON.
 
 
 ## Test

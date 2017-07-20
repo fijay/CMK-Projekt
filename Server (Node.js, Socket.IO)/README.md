@@ -5,7 +5,9 @@
 
 A Node.js application using Socket.IO for distributing updates in near real time.
 
-Flow:
+
+### Flow
+
 ```
                {
                  "rotation": 5
@@ -28,7 +30,7 @@ Server         ----------------------------------->         All users
 
 ### Input
 
-Something like this:
+A JSON like this:
 
 ```
 {
@@ -49,7 +51,7 @@ One key-value pair is preferred:
 
 ### Output
 
-Something like this:
+A JSON like this:
 
 ```
 {

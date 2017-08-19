@@ -1,7 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
 using System;
-
+/*
+ * SocketIO Server: http://himmelueberluebeck.imis.uni-luebeck.de
+ * Clients Anzeigen: http://himmelueberluebeck.imis.uni-luebeck.de/status
+ * Test Nachricht senden: http://himmelueberluebeck.imis.uni-luebeck.de/test
+ */
 namespace SocketIO
 {
     internal class Program
@@ -12,7 +16,7 @@ namespace SocketIO
 
         private static void Main(string[] args)
         {
-            var url = "";//ToDo Server hier eintragen
+            var url = "http://himmelueberluebeck.imis.uni-luebeck.de";//ToDo Server hier eintragen
             _isConnected = false;
             Connect(url);
         }
@@ -29,7 +33,7 @@ namespace SocketIO
             var test = Console.ReadLine();
             if (test == "A")//Nur zum testen hier
             {
-                SendToServer(null, null, "b");
+                SendToServer("b", null, "3");
             }
             test = Console.ReadLine();
             Disconnect();
